@@ -10,6 +10,7 @@
 ## Domain
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+This project will build an unofficial guide for Towson University students focused on student life, including campus dining, dorms, off-campus housing, and general campus survival advice. The system will combine official university information with informal student experiences from public reviews, Reddit threads, and other student-facing sources.
 
 ---
 
@@ -18,18 +19,28 @@
 <!-- List your specific sources: URLs, subreddit names, forum threads, or file descriptions.
      Aim for at least 10 sources that together cover different subtopics or perspectives within your domain. -->
 
-| # | Source | Description | URL or location |
-|---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+All nav-hub URLs have been resolved to leaf pages that carry real content. The **Fetch method** column drives the ingestion script (Milestone 3) — four loader branches: Reddit `.json` parse, HTML strip, PDF extract (`pdfplumber`), and manual copy for JS-rendered sites.
+
+| # | Source | Subtopic | Type | Description | URL or location | Fetch method |
+|---|--------|----------|------|-------------|-----------------|--------------|
+| 1 | Reddit: "Best dining hall?" | dining | informal | Student opinions comparing West, Newell, Glen, and other dining options. | https://www.reddit.com/r/Towson/comments/x1l8tv/best_dining_hall/.json | Reddit `.json` |
+| 2 | Reddit: "Dinning halls" | dining | informal | Frustration over the Aramark takeover — worse meal plans, grill changes, quality drop. 15 comments. | documents/dinning_halls.json | JSON (saved) |
+| 3 | CampusDish — Meal Plans | dining | official | Meal plan tiers, swipes, dining dollars — the authoritative "how it works." | https://towson.campusdish.com/MealPlans | Manual copy (JS) |
+| 4 | CampusDish — Locations & Menus | dining | official | The 3 all-you-care-to-eat halls (Glen, Newell, West Village) + named venues/menus. | https://towson.campusdish.com/LocationsAndMenus | Manual copy (JS) |
+| 5 | Reddit: "Parking at Towson" | parking / survival | informal | Freshman trying to dodge the no-car rule; ticket odds, patrol patterns, free parking nearby. 19 comments. | documents/parking_at_towson.json | JSON (saved) |
+| 6 | TU Parking Regulations 2025/26 | parking / survival | official | Full permit/enforcement/penalty policy incl. freshman (<30 units) no-car rule. ~100% content. | https://www.towson.edu/parking/documents/parking-regulations.pdf | PDF (pdfplumber) |
+| 7 | Reddit: "Transfer student Fall 26 housing advice" | off-campus | informal | Apartment recs for transfers (Donnybrook, Aspen Heights, York) with pros/cons. 18 comments. | documents/transfer_student_fall_26_housing_advice.json | JSON (saved) |
+| 8 | TU Off-Campus — Before You Rent | off-campus | official | Practical pre-lease rental guidance (the substance the off-campus hub linked out to). | https://www.towson.edu/studentlife/housing/offcampus/beforerent/index.html | HTML strip |
+| 9 | TU Off-Campus — After You Move In | off-campus | official | Tenant guidance after signing/moving in. | https://www.towson.edu/studentlife/housing/offcampus/aftermove/index.html | HTML strip |
+| 10 | Society19: Freshman Dorm Ranking | dorms | informal | Opinionated freshman dorm ranking (e.g. The Towers — central but slow elevators). | https://www.society19.com/the-ultimate-ranking-of-freshman-dorms-at-towson-university/ | Manual copy |
+| 11 | Roomsurf: Towson Dorm Reviews | dorms | informal | Crowd-sourced per-dorm star ratings and short reviews. | https://www.roomsurf.com/dorm-reviews/towson | Manual copy |
+| 12 | TU Glen Complex (official) | dorms | official | Official layout/amenities for Glen Towers — factual baseline for the "Towers" student opinions. | https://www.towson.edu/studentlife/housing/campus/residence/glen.html | HTML strip |
+| 13 | Niche: Towson Campus Life | survival | informal | Aggregated student reviews on safety, food, party scene, parking, "commuter school" weekends. | https://www.niche.com/colleges/towson-university/campus-life/ | Manual copy |
+| 14 | TU Resources for Residents | survival | official | Mildew/mold prevention tips + Fall Triples policy (20% refund, de-tripled by spring) + contacts. | https://www.towson.edu/studentlife/housing/campus/resources/ | HTML strip |
+| 15 | TU Packing Guide | survival | official | What to bring / leave behind when moving into a residence hall. | https://www.towson.edu/studentlife/housing/campus/resources/packing.html | HTML strip |
+| 16 | TU Housing Policies | survival | official | Official residence-hall policies (rules, conduct, what's allowed). | https://www.towson.edu/studentlife/housing/campus/resources/policies.html | HTML strip |
+
+> Dropped from earlier draft: the **OneCard/jsatech meal portal** (login wall, no public content) and the **off-campus housing search app** (dynamic listings, no static text). Both are interactive apps, not documents.
 
 ---
 
