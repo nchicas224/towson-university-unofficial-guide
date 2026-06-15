@@ -7,6 +7,5 @@ python-dotenv==1.0.1
 pdfplumber==0.11.4       # extract text from the parking-regulations PDF
 beautifulsoup4==4.12.3   # strip tags/nav from the saved .html sources
 
-# Query interface — add whichever you use for Milestone 5:
-# gradio>=6.9.0
-# streamlit>=1.40.0
+# Query interface (Milestone 5)
+gradio>=5.20.1
