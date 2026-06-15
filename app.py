@@ -86,10 +86,8 @@ with gr.Blocks(
         with gr.Column(scale=3):
             gr.ChatInterface(
                 fn=chat,
-                type="messages",
                 chatbot=gr.Chatbot(
                     height=460,
-                    type="messages",
                     placeholder=(
                         "<div style='text-align:center; color:#9ca3af; "
                         "margin-top:3rem;'>Ask about dorms, dining, parking, "
